@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     printVoidPtrs(&n,'i');
     printVoidPtrs(&letter,'c');
 
-    printArrayAdd();
+    printArray();
 
 
 

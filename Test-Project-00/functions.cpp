@@ -73,7 +73,7 @@ void printVoidPtrs(void *ptr, char type){
 } // End of printVoidPtrs()
 
 
-void printArrayAdd(){
+void printArray(){
 
     std::cout << "\n====== TEST 3 ======" << std::endl;
 

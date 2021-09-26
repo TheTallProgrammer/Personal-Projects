@@ -10,6 +10,6 @@
 // Prototypes
 void printTestVars();
 void printVoidPtrs(void *, char);
-void printArrayAdd();
+void printArray();
 
 #endif //TEST_PROJECT_00_FUNCTIONS_H
