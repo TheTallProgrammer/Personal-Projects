@@ -45,10 +45,29 @@ void printTestVars(){
 
 } // End of printTestVars()
 
-void printVoidPtrs(int *numPtr){
+
+// Holds the address of whatever is passed into the function
+// Can't directly dereference it
+void printVoidPtrs(void *ptr, char type){
 
     std::cout << "\n====== TEST 2 ======" << std::endl;
 
-    std::cout << *numPtr << std::endl;
+    switch (type) {
+
+        // Handles int pointers
+        case 'i':
+
+            // This casts the passed in void ptr and makes it an int pointer
+            // The * in the front deferences it as well to get the value
+            std::cout << *((int*)ptr) << std::endl;
+
+            break;
+
+        case 'c': // Handle char pointers
+
+            std::cout << *((char*)ptr) << std::endl;
+            break;
+
+    } // End of switch()
 
 } // End of printVoidPtrs()
