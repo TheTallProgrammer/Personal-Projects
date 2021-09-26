@@ -8,7 +8,6 @@ int main(int argc, char *argv[]){
 
     printTestVars();
 
-
     // Initializing/Declaring variables
     int n = 5;
     char letter = 'a';
@@ -17,6 +16,11 @@ int main(int argc, char *argv[]){
     // memory address and dereferences it and prints the value
     printVoidPtrs(&n,'i');
     printVoidPtrs(&letter,'c');
+
+    printArrayAdd();
+
+
+
 
 
     return 0;

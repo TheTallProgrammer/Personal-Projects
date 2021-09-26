@@ -46,7 +46,7 @@ void printTestVars(){
 } // End of printTestVars()
 
 
-// Holds the address of whatever is passed into the function
+// Points to the address of whatever is passed into the function
 // Can't directly dereference it
 void printVoidPtrs(void *ptr, char type){
 
@@ -71,3 +71,23 @@ void printVoidPtrs(void *ptr, char type){
     } // End of switch()
 
 } // End of printVoidPtrs()
+
+
+void printArrayAdd(){
+
+    std::cout << "\n====== TEST 3 ======" << std::endl;
+
+    // An array is a natural pointer
+    int numbers[5] = {3,4,1,7,5};
+
+    // This prints out the address of the first element in the array
+    std::cout << "Address of array: " << numbers << std::endl;
+
+    // This prints out the value of the first element in the array
+    std::cout << "Value of element 1: " << numbers[0] << std::endl;
+
+    // This also prints out the value of the first element, but in pointer notation
+    std::cout << "Value of element 1: " << *(numbers + 0) << std::endl;
+
+
+} // End of printArrayAdd()
