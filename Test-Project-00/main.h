@@ -6,5 +6,6 @@
 #define TEST_PROJECT_00_MAIN_H
 
 #include <iostream>
+#include "functions.h"
 
 #endif //TEST_PROJECT_00_MAIN_H
