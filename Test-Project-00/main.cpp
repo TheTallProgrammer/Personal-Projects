@@ -24,5 +24,7 @@ int main(int argc, char *argv[]){
     int max = numbers[0];
     getMinAndMax(numbers, 5, &min, &max);
 
+    printDynamArray();
+
     return 0;
 }

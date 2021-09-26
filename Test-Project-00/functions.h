@@ -12,5 +12,6 @@ void printTestVars();
 void printVoidPtrs(void *, char);
 void printArray();
 void getMinAndMax(int [], int, int *, int *);
+void printDynamArray();
 
 #endif //TEST_PROJECT_00_FUNCTIONS_H

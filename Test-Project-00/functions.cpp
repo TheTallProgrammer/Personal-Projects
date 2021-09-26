@@ -117,5 +117,36 @@ void getMinAndMax(int numbers[], int size, int *min, int *max){
     std::cout << "\nThe size of the array is: " << size << std::endl;
     std::cout << "The min value is: " << *min << std::endl;
     std::cout << "The max value is: " << *max << std::endl;
-    
+
 } // End of getMinAndMax()
+
+
+void printDynamArray(){
+
+    std::cout << "\n====== TEST 5 ======" << std::endl;
+
+    int size = 5;
+
+    // The 'new' key word allocates, or gives memory that represents 'size'
+    // or array size of 5, to the pointer myArray. At the moment, myArray is
+    // pointing to the first element in the arrays address,
+    // like in test printArray() or test 3. Once you allocate, you have to deallocate
+    int *myArray = new int[size];
+
+    for (int i = 0; i < size; i++){
+        myArray[i] = i;
+    }
+
+    for (int i = 0; i < size; i++){
+        std::cout << myArray[i]; // array notation
+//        std::cout << *(myArray+i); pointer notation
+    }
+
+    // keyword 'delete' de-allocates memory of the array, making it point
+    // to a random location in memory
+    delete[]myArray;
+
+    // This points array to nothing instead of random memory
+    myArray = NULL;
+
+}
