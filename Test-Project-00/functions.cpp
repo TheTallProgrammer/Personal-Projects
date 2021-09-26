@@ -91,3 +91,31 @@ void printArray(){
 
 
 } // End of printArrayAdd()
+
+
+// Finds the min/max value of elements in an array
+void getMinAndMax(int numbers[], int size, int *min, int *max){
+
+    std::cout << "\n====== TEST 4 ======" << std::endl;
+    std::cout << "Elements: ";
+    for (int i =0; i < size; i++){
+
+        // Prints all elements on the same line
+        std::cout << numbers[i] << ", ";
+
+        if(numbers[i] > *max){
+
+            *max = numbers[i];
+
+        } else if (numbers[i] < *min){
+
+            *min = numbers[i];
+
+        }
+    }
+
+    std::cout << "\nThe size of the array is: " << size << std::endl;
+    std::cout << "The min value is: " << *min << std::endl;
+    std::cout << "The max value is: " << *max << std::endl;
+    
+} // End of getMinAndMax()

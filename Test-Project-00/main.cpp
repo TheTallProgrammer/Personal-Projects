@@ -19,9 +19,10 @@ int main(int argc, char *argv[]){
 
     printArray();
 
-
-
-
+    int numbers[5] = {4,3,-4,54,5};
+    int min = numbers[0];
+    int max = numbers[0];
+    getMinAndMax(numbers, 5, &min, &max);
 
     return 0;
 }
