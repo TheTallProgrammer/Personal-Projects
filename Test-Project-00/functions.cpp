@@ -31,12 +31,24 @@ void printTestVars(){
 
     // Can also make a pointer that holds a value, doesn't have to be set to
     // a variable
-    int *ptr2;
+    // Sometimes it does though, because it needs an address to go off of, so
+    // we'd use a variable to make an address for the pointer to use
+    int v;
+    int *ptr2 = &v;
     std::cout << "\nptr2 mem address: " << ptr2 << std::endl;
     std::cout << "deref ptr2 value w/ nothing assigned yet: " << *ptr2 << std::endl;
+
     // Dereference it and assign it a value
     *ptr2 = 20;
     std::cout << "\nptr2 mem address w/ value assigned: " << ptr2 << std::endl;
     std::cout << "ptr2 deref w/ new value assigned: " << *ptr2 << std::endl;
 
-}
+} // End of printTestVars()
+
+void printVoidPtrs(int *numPtr){
+
+    std::cout << "\n====== TEST 2 ======" << std::endl;
+
+    std::cout << *numPtr << std::endl;
+
+} // End of printVoidPtrs()

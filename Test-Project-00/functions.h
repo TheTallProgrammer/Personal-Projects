@@ -9,5 +9,6 @@
 
 // Prototypes
 void printTestVars();
+void printVoidPtrs(int *);
 
 #endif //TEST_PROJECT_00_FUNCTIONS_H
