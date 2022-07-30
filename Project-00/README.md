@@ -1,0 +1,1 @@
+This is a download estimation tool I made in python that calculates the amount of time left in a download.
