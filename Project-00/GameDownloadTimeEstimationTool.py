@@ -1,30 +1,66 @@
+# Logan Falkenberg
+
+# 1 GB = 1000 MB
+
+# Import Modules
 import math
 
-def get_input(prompt):
-    print()
-    return float(input(prompt))
+# ---------------------------------------------------------------------------------------
+# Enter the average number of GB remaining
+print("")
+gbRemainingInput = float(input("Enter the average number of GB remaining: "))
+gbRemaining = float(gbRemainingInput)
 
-# Getting Inputs
-gb_remaining = get_input("Enter the average number of GB remaining: ")
-mbps = get_input("Enter the average amount of MB/s: ")
+# Enter the average amount of MB/s
+print("")
+mbPSInput = float(input("Enter the average amount of MB/s: "))
+mbPS = float(mbPSInput)
 
-# Conversion MB/s to GB/s
-gbps = mbps / 1000
+# ---------------------------------------------------------------------------------------
 
-# Time calculation
-seconds_left = gb_remaining / gbps
-minutes_left = seconds_left / 60
-minutes_left_int, seconds_fraction = math.modf(minutes_left)
-seconds_left_only = seconds_fraction * 60
-hours_left = minutes_left_int // 60
 
-# Prints remaining time
-print("---------------------------------------------------------------------------\n")
-if minutes_left_int >= 60:
-    minutes_left_int -= hours_left * 60
-    print(f"Hours Remaining: {int(hours_left)}")
-print(f"Minutes Remaining: {int(minutes_left_int)}")
-print(f"Seconds Remaining: {int(seconds_left_only)}\n")
-print("---------------------------------------------------------------------------")
+# Make a variable for the outcome of converting it to GB
+mbConversion = float(mbPS * 0.001)
 
-input("Press ENTER to close")
+# Getting the seconds by dividing GB by MB/s
+secondsLeft = float(gbRemaining / mbConversion)
+
+# Get's remaining minutes by dividing the seconds left by 60
+minutesLeft = float(secondsLeft / 60)
+
+# Seperates the minutes and seconds (seconds, minutes)
+secondsCommaMinutes = math.modf(minutesLeft)
+
+# Get's only the seconds at index ([0],1)
+secondsLeftOnly = float(secondsCommaMinutes[0])
+
+# Get's only the minutes at index (0,[1])
+minutesLeftOnly = int(secondsCommaMinutes[1])
+
+# Converts the seconds from the remaining seconds into the actual seconds remaining
+actualSecondsRemaining = secondsLeftOnly * 60
+
+# Pulls out any hours out of the minutes by dividing minutes by 60
+hoursLeft = int(minutesLeftOnly / 60)
+
+# Print final result of remaining time
+if minutesLeftOnly >= 60:
+    minutesLeftOnly = minutesLeftOnly - (hoursLeft * 60)
+    print("---------------------------------------------------------------------------")
+    print("")
+    print("Hours Remaining: " + str(hoursLeft))
+    print("Minutes Remaining: " + str(minutesLeftOnly))
+    print("Seconds Remaining: " + str(actualSecondsRemaining))
+    print("")
+    print("---------------------------------------------------------------------------")
+else:
+    print("---------------------------------------------------------------------------")
+    print("")
+    print("Minutes Remaining: " + str(minutesLeftOnly))
+    print("Seconds Remaining: " + str(actualSecondsRemaining))
+    print("")
+    print("---------------------------------------------------------------------------")
+
+endGameInput = str(input("Press ENTER to close"))
+endGame = str(endGameInput)
+
